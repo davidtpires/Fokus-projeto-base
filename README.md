@@ -2,7 +2,7 @@
 
 Este projeto é uma aplicação de **temporizador estilo Pomodoro**, desenvolvido durante o curso de **JavaScript: manipulando elementos no DOM** na Alura. O Fokus ajuda na gestão de tempo e foco, permitindo alternar entre períodos de trabalho e pausa de forma eficiente.
 
-🔗 [Acesse o site aqui](https://davidtpires.github.io/fokus/)
+🔗 [Acesse o site aqui](https://davidtpires.github.io/Fokus-projeto-base/)
 
 ---
 
