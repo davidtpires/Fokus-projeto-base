@@ -7,6 +7,8 @@ const titulo = document.querySelector('.app__title')
 const botoes = document.querySelectorAll('.app__card-button')
 const musicaFocoInput = document.querySelector('#alternar-musica')
 const startPauseBt = document.querySelector('#start-pause')
+const iniciarOuPausarBt = document.querySelector('#start-pause span')
+const iniciarOuPausarImg = document.querySelector('#start-pause img')
 
 const play = new Audio('/sons/play.wav')
 const pause = new Audio('/sons/pause.mp3')
@@ -69,14 +71,13 @@ function alterarContexto(contexto) {
 
 const contagemRegressiva = () => {
     if (tempoDecorridoEmSegundos <= 0) {
-        beep.play()
-        zerar()
+        // beep.play()
         alert('Tempo finalizado')
+        zerar()
         return
     }
     tempoDecorridoEmSegundos -= 1
     console.log('Temporizador: ' + tempoDecorridoEmSegundos)
-    console.log('Id: ' + intervaloId)
 }
 
 startPauseBt.addEventListener('click', iniciarOuPausar)
@@ -89,9 +90,14 @@ function iniciarOuPausar() {
     }
     play.play();
     intervaloId = setInterval(contagemRegressiva, 1000)
+    iniciarOuPausarBt.textContent = "Pausar"
+    iniciarOuPausarImg.setAttribute('src', `/imagens/pause.png`)
+
 }
 
 function zerar() {
     clearInterval(intervaloId)
+    iniciarOuPausarBt.textContent = "Começar"
+    iniciarOuPausarImg.setAttribute('src', `/imagens/play_arrow.png`)
     intervaloId = null
 }
